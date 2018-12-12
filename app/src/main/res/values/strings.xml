@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="font_regular">sans-serif</string>
+    <string name="font_light">sans-serif-light</string>
+    <string name="font_condensed">sans-serif-condensed</string>
+    <string name="font_medium">sans-serif-medium</string>    <string name="app_name">Mal Malimet</string>
+    <string name="back">Назад</string>
+    <string name="btn_close">Закрыть</string>
+    <string name="btnScannerSelectBarcode">Scanner Selection Example</string>
+    <string name="btnSwitchScanners">Switch Scanners</string>
+    <string name="chose_printer">Выбор принтера</string>
+    <string name="clear">Очистить</string>
+    <string name="close_cell">Закрыть ячейку</string>
+    <string name="config_printer">Настройка принтера</string>
+    <string name="enter">Войти</string>
+    <string name="enter_market_index">Индекс супермаркета</string>
+    <string name="enter_seal">Введите номер пломбы</string>
+    <string name="enter_weight">Введите вес</string>
+    <string name="enter_your_pin">Введите свой Pin-код: </string>
+    <string name="exit">Выход</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_all_back">Назад</string>
+    <string name="label_all_save">Сохранить</string>
+    <string name="label_app_name">Mal Malimet</string>
+    <string name="label_authorize">Авторизация</string>
+    <string name="label_check">Проверить</string>
+    <string name="label_choose_menu">Выберите одно из следующих действий</string>
+    <string name="label_choose_vet_events">Выберите одно из следующих действий</string>
+    <string name="label_launch_check_animal">Проверить животное</string>
+    <string name="label_launch_enter_system">Войти в систему</string>
+    <string name="label_launch_help">Помощь</string>
+    <string name="label_loading">Загрузка…</string>
+    <string name="label_send">Отправить</string>
+    <string name="label_slaughter_for_personal_use">Для личного пользования</string>
+    <string name="label_slaughter_for_sell">Для реализации (продажи)</string>
+    <string name="login">Логин</string>
+    <string name="next">Далее</string>
+    <string name="no_user_barcode">Нет баркода оператора</string>
+    <string name="nonvalid_data">Формат введенных данных не верен</string>
+    <string name="pin">Пин-код</string>
+    <string name="register_animal_breedy">Породная</string>
+    <string name="register_animal_female">Самка</string>
+    <string name="register_animal_male">Самец</string>
+    <string name="register_animal_mongrel">Беспородная</string>
+    <string name="repeat_label_print">повторить печать ярлыка</string>
+    <string name="save_market_index">Сохранить</string>
+    <string name="scan">Сканировать</string>
+    <string name="send">Отправить</string>
+    <string name="some_error">Some Error Occurred!</string>
+    <string name="sort">Сортировать</string>
+    <string name="tv_post_index_list">Список почтовых индексов</string>
+    <string name="txtBarcodeTitle">Press the device\'s scan button to scan a barcode.</string>
+    <string name="label_allergy_researches">Аллегрические иследования</string>
+    <string name="label_id_krs">Введите ID животного</string>
+    <string name="label_just_id_krs">ID животного</string>
+    <string name="quarantine">Карантин</string>
+    <string name="offquarantine">Снять карантин</string>
+    <string name="label_exit">Выйти</string>
+    <string name="label_seller">Продавец</string>
+    <string name="label_iin">Введите ИИН</string>
+    <string name="label_fio">Введите ФИО</string>
+    <string name="camera_denied">Вы отказали в доступе к камере</string>
+    <string name="notifications_admin_channel_name">channelName</string>
+    <string name="notifications_admin_channel_description">chanelDesc</string>
+    <string name="notification_add_to_cart_button">addToCardButton</string>
+
+
+    <string name="error_invalid_bill_amount">Итоговая сумма должна быть больше 0</string>
+    <string name="error_invalid_bin">Неверный БИН</string>
+    <string name="error_invalid_date_should_be_later">Дата должна быть позднее начальной</string>
+    <string name="error_invalid_date_should_be_later_than_now">Дата и время начала должны быть позднее текущего времени</string>
+    <string name="error_invalid_discount_min_amount">Значение должно быть больше суммы скидки</string>
+    <string name="error_invalid_email">Неверный формат e-mail</string>
+    <string name="error_invalid_format">Неверный формат</string>
+    <string name="error_invalid_hash_link">Ссылка, по которой вы перешли некорректна, либо срок ее действия истек.</string>
+    <string name="error_invalid_iban">Неверный формат IBAN</string>
+    <string name="error_invalid_iin">Неверный ИИН</string>
+    <string name="error_invalid_iin_or_bin">Неверный ИИН/БИН</string>
+    <string name="error_invalid_instagram">Введите полную ссылку, либо ваш Instagram-логин</string>
+    <string name="error_invalid_mobile_phone">Введите номер мобильного телефона</string>
+    <string name="error_invalid_name">
+        Значение должно содержать только буквы из латиницы или кириллицы, пробелы, дефисы, точки, апострофы и начинаться на заглавную букву. Минимально 2 символа.
+    </string>
+    <string name="error_invalid_number">Введите численное значение</string>
+    <string name="error_invalid_qr_code">Формат QR-кода неверный</string>
+    <string name="error_invalid_password">Длина пароля должна быть не менее 8 символов</string>
+    <string name="error_invalid_password_title">Неверный формат пароля</string>
+    <string name="error_invalid_percentage_discount">Максимальное значение 100%</string>
+    <string name="error_invalid_phone">Неверный формат номера телефона</string>
+    <string name="error_invalid_user_code">Неверный формат кода</string>
+    <string name="error_field_required">Это поле обязательно</string>
+    <string name="error_less_than_zero">Значение не может быть меньше 0</string>
+    <string name="error_greater_than_hundred">Значение не может быть больше 100</string>
+    <string name="label_select_empty">&lt;не выбрано&gt;</string>
+    <string name="action_ok">OK</string>
+
+    <string name="action_cancel">Отмена</string>
+    <string name="action_delete_photo">Удалить фото</string>
+    <string name="action_load_from_file_system">Загрузить из файловой системы</string>
+    <string name="action_capture_image">Сделать снимок</string>
+    <string name="action_choose_action">Выберите действие</string>
+    <string name="label_no_notifications">У Вас нет уведомлений</string>
+    <string name="label_owner">Владелец</string>
+    <string name="label_bin">БИН</string>
+    <string name="label_company_name">Название компании</string>
+    <string name="label_location">Место дислокации</string>
+    <string name="label_sender">Отправитель</string>
+    <string name="label_sender_company_name">Название организации</string>
+    <string name="label_mass">Количество килограмм:</string>
+    <string name="label_reject_reason">Причина отказа</string>
+    <string name="label_reject">Отказать</string>
+    <string name="confirm">Подтвердить</string>
+
+
+    <string name="channel_name_news">Новости</string>
+    <string name="channel_desc_news">Новости и промо-акции</string>
+    <string name="channel_name_financial_urgent">Срочные финансовые</string>
+    <string name="channel_desc_financial_urgent">Входящие счета, возврат средств</string>
+    <string name="channel_name_financial">Финансовые</string>
+    <string name="channel_desc_financial">Уведомления о статусе займа, полученных кэшбэках</string>
+    <string name="channel_name_reminders">Напоминания</string>
+    <string name="channel_desc_reminders">Напоминания об окончании времени резервации парковки</string>
+    <string name="channel_name_chat">Чат</string>
+    <string name="channel_desc_chat">Входящие сообщения</string>
+    <string name="channel_name_service">Сервисы</string>
+    <string name="channel_desc_service">Уведомления о заказах/отмене заказов в сервисах Senim</string>
+    <string name="channel_name_misc">Разное</string>
+    <string name="channel_desc_misc">Редкие, специфичные уведомления</string>
+
+
+</resources>
+

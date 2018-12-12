@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:zAdjustment="top">
+    <translate
+        android:duration="@integer/activity_transition_duration"
+        android:fromXDelta="0.0%p"
+        android:toXDelta="90.0%p" />
+
+    <alpha
+        android:duration="@integer/activity_transition_duration"
+        android:fromAlpha="1"
+        android:toAlpha="0" />
+</set>

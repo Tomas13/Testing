@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<string-array name="array_animal_type">-->
+        <!--<item>Крупнорогатый скот</item>-->
+        <!--<item>Овца</item>-->
+        <!--<item>Лошадь</item>-->
+        <!--<item>Верблюд</item>-->
+        <!--<item>Свинья</item>-->
+    <!--</string-array>-->
+
+    <string-array name="array_area_type">
+        <item>Область</item>
+        <item>ЮКО</item>
+        <item>ВКО</item>
+        <item>ЗКО</item>
+        <item>ЦКО</item>
+        <item>СКО</item>
+    </string-array>
+    <string-array name="array_region_type">
+        <item>Выберите Район</item>
+        <item>Байконур</item>
+        <item>Алматинский</item>
+        <item>Есильский</item>
+    </string-array>
+
+    <string-array name="array_region_hoz">
+        <item>Выберите Хозяйство</item>
+        <item>Рога</item>
+        <item>Копыта</item>
+        <item>Хоз 1</item>
+    </string-array>
+
+    <string-array name="array_rural_area_type">
+        <item>Сельский округ</item>
+    </string-array>
+    <string-array name="array_village_type">
+        <item>Мерке</item>
+        <item>Асакаровка</item>
+        <item>Рождественка</item>
+        <item>Малиновка</item>
+    </string-array>
+
+    <string-array name="array_bin">
+        <item>Поселок</item>
+        <item>КРС</item>
+        <item>Овцы</item>
+        <item>Лошади</item>
+        <item>Верблюды</item>
+        <item>Свиньи</item>
+    </string-array>
+
+    <string-array name="array_diseases">
+        <item>Выберите болезнь</item>
+        <item>Инфекционная болезнь</item>
+        <item>Инвазионная болезнь</item>
+        <item>Незаразная болезнь</item>
+    </string-array>
+
+    <string-array name="array_names">
+        <item>Наименования</item>
+        <item>Наименования 1</item>
+        <item>Наименования 2</item>
+        <!--<item>Инфекционная болезнь</item>-->
+        <!--<item>Инвазионная болезнь</item>-->
+        <!--<item>Незаразная болезнь</item>-->
+    </string-array>
+    <string-array name="array_vet">
+        <item>Ветеринарная</item>
+        <item>Ветеринарная 1</item>
+        <item>Ветеринарная 3</item>
+        <!--<item>Инфекционная болезнь</item>-->
+        <!--<item>Инвазионная болезнь</item>-->
+        <!--<item>Незаразная болезнь</item>-->
+    </string-array>
+
+    <string-array name="array_slaughter_places">
+        <!--<item>Выберите место убоя</item>-->
+        <item>Убойные площадки</item>
+        <item>Убойные пункты</item>
+        <item>Мясокомбинаты</item>
+    </string-array>
+</resources>

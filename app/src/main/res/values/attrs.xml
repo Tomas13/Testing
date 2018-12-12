@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoadingView">
+        <attr name="loadingView_immediate" format="boolean" />
+        <attr name="loadingView_noText" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="Repeater">
+        <attr name="repeater_itemLayout" format="reference" />
+        <attr name="repeater_scrollable" format="boolean" />
+        <attr name="repeater_dividerDrawable" format="reference" />
+        <attr name="repeater_orientation">
+            <enum name="vertical" value="1" />
+            <enum name="horizontal" value="2" />
+        </attr>
+        <attr name="repeater_multiType" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingIndicator">
+        <attr name="loadingIndicator_size" format="dimension" />
+        <attr name="loadingIndicator_color" format="color" />
+        <attr name="loadingIndicator_alternateColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="Button">
+        <attr name="button_text" format="string" />
+        <attr name="button_color" format="color" />
+        <attr name="button_textColor" format="color" />
+        <attr name="button_icon" format="reference" />
+        <attr name="button_iconColor" format="color" />
+        <attr name="button_height" format="dimension" />
+        <attr name="button_small" format="boolean" />
+        <attr name="button_iconSize" format="dimension"/>
+        <attr name="button_iconPosition">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="button_padding" format="dimension" />
+
+        <attr name="button_type">
+            <enum name="regular" value="1" />
+            <enum name="rounded" value="2" />
+            <enum name="full_width" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="GridRepeater">
+        <attr name="gridRepeater_columns" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="Select">
+        <attr name="select_label" format="string" />
+        <attr name="select_nullable" format="boolean" />
+        <attr name="select_validator">
+            <flag name="none" value="1" />
+            <flag name="required" value="2" />
+        </attr>
+    </declare-styleable>
+
+</resources>

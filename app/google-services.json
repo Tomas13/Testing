@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "742100891928",
+    "firebase_url": "https://malmalimet.firebaseio.com",
+    "project_id": "malmalimet",
+    "storage_bucket": "malmalimet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742100891928:android:6eef0609b239da71",
+        "android_client_info": {
+          "package_name": "malmalimet.kz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742100891928-soaiqo1ip24ihs48hdg284cd15l48gaf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0lFyvbV9_m13nKSjiDItW1L3Ih9xB0MM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

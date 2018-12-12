@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="malmalimet.kz.ui.registeranimal.RegisterAnimalViewModel" />
+
+        <variable
+            name="item"
+            type="malmalimet.kz.data.Image" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:imageView_loadFullUrl="@{item.remoteImage.mainUrl}"
+                app:show="@{item.isRemote() &amp;&amp; item.remoteImage.hasFullUrl}" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                app:hide="@{item.isRemote()}"
+                app:imageView_file="@{item.file}" />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="@{() -> vm.onImageClicked(item)}" />
+    </FrameLayout>
+</layout>

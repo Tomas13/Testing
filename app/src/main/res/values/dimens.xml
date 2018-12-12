@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bigTextSize">20sp</dimen>
+
+    <!-- Generic sizes -->
+    <dimen name="xxsmall">1dp</dimen>
+    <dimen name="xsmall">2dp</dimen>
+    <dimen name="small">4dp</dimen>
+    <dimen name="medium">8dp</dimen>
+    <dimen name="xmedium">10dp</dimen>
+    <dimen name="large">16dp</dimen>
+    <dimen name="xlarge">20dp</dimen>
+    <dimen name="xxlarge">30dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="font_xxsmall">10sp</dimen>
+    <dimen name="font_xsmall">12sp</dimen>
+    <dimen name="font_small">14sp</dimen>
+    <dimen name="font_small_plus">15sp</dimen>
+    <dimen name="font_medium">16sp</dimen>
+    <dimen name="font_medium_plus">18sp</dimen>
+    <dimen name="font_large">20sp</dimen>
+    <dimen name="font_xlarge">30sp</dimen>
+
+    <dimen name="font_auth_title">34sp</dimen>
+    <dimen name="font_small_last_activity">6sp</dimen>
+
+    <!-- System dimensions -->
+    <dimen name="status_bar_height">24dp</dimen>
+
+    <dimen name="default_border_radius">2dp</dimen>
+    <dimen name="default_elevation">2dp</dimen>
+
+    <dimen name="screen_padding">18dp</dimen>
+    <dimen name="negative_screen_padding">-18dp</dimen>
+    <dimen name="screen_padding_form">22dp</dimen>
+    <dimen name="screen_padding_large">24dp</dimen>
+
+    <dimen name="form_padding">4dp</dimen>
+    <dimen name="negative_form_padding">-4dp</dimen>
+
+    <dimen name="margin_dialog_negative">-6dp</dimen>
+
+    <dimen name="toolbar_height">50dp</dimen>
+
+    <dimen name="margin_toolbar_title">60dp</dimen>
+
+    <dimen name="margin_cardview">5dp</dimen>
+
+    <!-- Icons -->
+    <dimen name="icon_xsmall">16dp</dimen>
+    <dimen name="icon_small">18dp</dimen>
+    <dimen name="icon">24dp</dimen>
+    <dimen name="icon_large">30dp</dimen>
+    <dimen name="icon_xlarge">40dp</dimen>
+    <dimen name="icon_xxlarge">48dp</dimen>
+    <dimen name="list_item_icon_size">60dp</dimen>
+    <dimen name="list_item_image_size">72dp</dimen>
+
+    <!-- Buttons -->
+    <dimen name="btn_radius_small">2dp</dimen>
+    <dimen name="btn_radius">26dp</dimen>
+    <dimen name="btn_radius_round">40dp</dimen>
+    <dimen name="btn_height_small">36dp</dimen>
+    <dimen name="btn_height_large">60dp</dimen>
+
+    <dimen name="intro_img_size">280dp</dimen>
+    <!-- intro_img_size - 30dp -->
+    <dimen name="intro_header_height">250dp</dimen>
+
+    <!-- TextField -->
+    <dimen name="text_field_radius">10dp</dimen>
+    <dimen name="text_field_padding_top">8dp</dimen>
+
+    <!-- CodeTextField -->
+    <dimen name="codeTextField_itemDistance">25dp</dimen>
+    <dimen name="codeTextField_dashWidth">30dp</dimen>
+    <dimen name="codeTextField_dashHeight">2dp</dimen>
+
+    <!-- Auth screen -->
+    <dimen name="auth_text_field_padding_vertical">10dp</dimen>
+
+    <!-- Balance screen -->
+    <dimen name="balance_action_button_size">130dp</dimen>
+    <dimen name="balance_action_button_icon_size">30dp</dimen>
+    <dimen name="balance_action_button_label_size">18sp</dimen>
+
+    <!-- Bank cards -->
+    <dimen name="bank_card_item_min_height">105dp</dimen>
+
+    <!-- Dialogs -->
+    <dimen name="dialog_corner_radius">6dp</dimen>
+
+    <!-- Map -->
+    <dimen name="map_marker_width">34dp</dimen>
+    <dimen name="map_marker_height">46dp</dimen>
+    <dimen name="map_marker_width_selected">44dp</dimen>
+    <dimen name="map_marker_height_selected">59dp</dimen>
+    <dimen name="map_marker_offset">21dp</dimen>
+
+    <!-- ProgressBar -->
+    <dimen name="progress_bar_size_small">20dp</dimen>
+    <dimen name="progress_bar_size_large">36dp</dimen>
+    <dimen name="progress_bar_height">48dp</dimen>
+
+    <!-- Profile -->
+    <dimen name="profile_header_image_height">220dp</dimen>
+    <dimen name="profile_main_image_size">80dp</dimen>
+
+    <!-- Search branch details -->
+    <dimen name="search_branch_detail_gallery_main_height">140dp</dimen>
+    <dimen name="search_list_item_min_height">100dp</dimen>
+
+    <!-- Services -->
+    <dimen name="service_item_corner_radius">16dp</dimen>
+    <dimen name="service_item_image_height">90dp</dimen>
+    <dimen name="service_item_min_height">115dp</dimen>
+    <dimen name="service_item_text_right_margin">115dp</dimen>
+
+    <!-- Branch form -->
+    <dimen name="branch_form_gallery_image_size">90dp</dimen>
+
+    <!-- Bottom navigation -->
+    <dimen name="bottom_navigation_height">47dp</dimen>
+    <dimen name="neg_bottom_navigation_height">-47dp</dimen>
+    <dimen name="bottom_navigation_icon">20dp</dimen>
+    <dimen name="bottom_navigation_text_size_forced_active">12sp</dimen>
+    <dimen name="bottom_navigation_text_size_forced_inactive">12sp</dimen>
+    <dimen name="bottom_navigation_margin_bottom">5dp</dimen>
+    <dimen name="bottom_navigation_margin_top_inactive">4dp</dimen>
+    <dimen name="bottom_navigation_margin_top_active">4dp</dimen>
+
+    <!-- Bottom navigation notifications badge -->
+    <dimen name="bottom_navigation_notification_width">18dp</dimen>
+    <dimen name="bottom_navigation_notification_height">18dp</dimen>
+    <dimen name="bottom_navigation_notification_radius">10dp</dimen>
+    <dimen name="bottom_navigation_notification_margin_left">12dp</dimen>
+    <dimen name="bottom_navigation_notification_margin_left_active">12dp</dimen>
+    <dimen name="bottom_navigation_notification_margin_top_classic">0dp</dimen>
+    <dimen name="bottom_navigation_notification_text_size">11sp</dimen>
+
+    <!-- Custom WebView -->
+    <dimen name="toolbarHeight">48dp</dimen>
+    <dimen name="defaultProgressBarHeight">3dp</dimen>
+
+    <!-- Promo    -->
+    <dimen name="cardview_margin_promo">6dp</dimen>
+    <dimen name="time_picker_min_width">70dp</dimen>
+
+</resources>
