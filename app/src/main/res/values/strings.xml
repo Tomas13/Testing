@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="search">Search</string>
+
     <string name="font_regular">sans-serif</string>
     <string name="font_light">sans-serif-light</string>
     <string name="font_condensed">sans-serif-condensed</string>
-    <string name="font_medium">sans-serif-medium</string>    <string name="app_name">Mal Malimet</string>
+    <string name="font_medium">sans-serif-medium</string>
+    <string name="app_name">Bts-Flickr</string>
     <string name="back">Назад</string>
     <string name="btn_close">Закрыть</string>
     <string name="btnScannerSelectBarcode">Scanner Selection Example</string>
@@ -110,6 +113,14 @@
     <string name="label_reject_reason">Причина отказа</string>
     <string name="label_reject">Отказать</string>
     <string name="confirm">Подтвердить</string>
+
+    <string name="recent">Recent</string>
+    <string name="cannot_load_photos">Can\'t load photos</string>
+    <string name="retry">Retry</string>
+    <plurals name="xPhotos">
+        <item quantity="one">%d photo</item>
+        <item quantity="other">%d photos</item>
+    </plurals>
 
 
     <string name="channel_name_news">Новости</string>

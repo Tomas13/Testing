@@ -1,1 +1,1 @@
-include ':app', ':libraryzxing'
+include ':app', ':domain', ':data'

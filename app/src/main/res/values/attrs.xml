@@ -16,11 +16,6 @@
         <attr name="repeater_multiType" format="boolean" />
     </declare-styleable>
 
-    <declare-styleable name="LoadingIndicator">
-        <attr name="loadingIndicator_size" format="dimension" />
-        <attr name="loadingIndicator_color" format="color" />
-        <attr name="loadingIndicator_alternateColor" format="color" />
-    </declare-styleable>
 
     <declare-styleable name="Button">
         <attr name="button_text" format="string" />
@@ -46,15 +41,6 @@
 
     <declare-styleable name="GridRepeater">
         <attr name="gridRepeater_columns" format="integer" />
-    </declare-styleable>
-
-    <declare-styleable name="Select">
-        <attr name="select_label" format="string" />
-        <attr name="select_nullable" format="boolean" />
-        <attr name="select_validator">
-            <flag name="none" value="1" />
-            <flag name="required" value="2" />
-        </attr>
     </declare-styleable>
 
 </resources>

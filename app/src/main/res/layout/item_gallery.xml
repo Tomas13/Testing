@@ -1,47 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
-            name="vm"
-            type="malmalimet.kz.ui.registeranimal.RegisterAnimalViewModel" />
-
+            name="viewModel"
+            type="assignment.kz.ui.main.MainViewModel" />
         <variable
             name="item"
-            type="malmalimet.kz.data.Image" />
+            type="assignment.kz.ui.main.PhotoViewModel" />
+
+
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:fitsSystemWindows="true"
+        android:onClick="@{() -> item.tapAction.perform()}">
 
-        <FrameLayout
+        <ImageView
+            android:id="@+id/my_image_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/ic_main_logo"
+            app:imageView_loadUrl="@{item.link}" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                app:imageView_loadFullUrl="@{item.remoteImage.mainUrl}"
-                app:show="@{item.isRemote() &amp;&amp; item.remoteImage.hasFullUrl}" />
-
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:visibility="gone"
-                app:hide="@{item.isRemote()}"
-                app:imageView_file="@{item.file}" />
-
-        </FrameLayout>
-
-        <View
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:onClick="@{() -> vm.onImageClicked(item)}" />
+            android:layout_height="48dp"
+            android:layout_gravity="bottom"
+            android:background="#80000000"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@{item.title}"
+            android:textColor="#FFF"
+            tools:text="Melbourne CBD" />
     </FrameLayout>
 </layout>
