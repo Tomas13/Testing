@@ -26,16 +26,17 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
-import dagger.Module;
-import dagger.Provides;
 import assignment.kz.data.Repo;
 import assignment.kz.data.SupermarketRepository;
+import assignment.kz.data.db.RecentDatabase;
 import assignment.kz.data.network.ApiHelper;
 import assignment.kz.data.network.AppApiHelper;
 import assignment.kz.data.network.NetworkService;
 import assignment.kz.data.prefs.AppPreferencesHelper;
 import assignment.kz.data.prefs.PreferencesHelper;
 import assignment.kz.utils.AppConstants;
+import dagger.Module;
+import dagger.Provides;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -136,5 +137,10 @@ public class DiModule {
         return appApiHelper;
     }
 
+    @Provides
+    @Singleton
+    RecentDatabase provideRecentDatabase() {
+        return RecentDatabase.getInstance(mApplication.getApplicationContext());
+    }
 
 }

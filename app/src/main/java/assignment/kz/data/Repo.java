@@ -1,5 +1,10 @@
 package assignment.kz.data;
 
+import java.util.List;
+
+import assignment.kz.data.db.entity.DbRecent;
+import rx.Observable;
+
 public interface Repo {
 //
 //    public Observable<Response<ContentResponse<Animal>>> getAnimalById(String id);
@@ -19,4 +24,9 @@ public interface Repo {
 //
 //
 //    public void putAccessToken(String accessToken);
+
+    Observable<List<DbRecent>> getRecents();
+    void insertRecent(String value);
+    Observable<String> insertRecent(DbRecent dbRecent);
+
 }

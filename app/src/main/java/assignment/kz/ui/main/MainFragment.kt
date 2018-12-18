@@ -11,6 +11,8 @@ import android.view.inputmethod.EditorInfo
 import android.widget.ArrayAdapter
 import assignment.kz.App
 import assignment.kz.R
+import assignment.kz.data.db.RecentDatabase
+import assignment.kz.data.db.entity.DbRecent
 import assignment.kz.databinding.FragmentMainBinding
 import assignment.kz.di.SchedulerFactory
 import assignment.kz.ui.detail.DetailPhotoActivity
@@ -18,6 +20,7 @@ import com.domain.*
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_main.*
 import javax.inject.Inject
+
 
 class MainFragment : Fragment() {
 
@@ -79,6 +82,7 @@ class MainFragment : Fragment() {
         autoCompleteTextView1.setOnEditorActionListener { v, actionId, event ->
             var handled = false
             if (actionId == EditorInfo.IME_ACTION_NEXT) {
+                viewModel.saveToRecents(v.text.toString())
                 viewModel.onQueryTextSubmit(v.text.toString())
                 handled = true
             } else
@@ -90,6 +94,8 @@ class MainFragment : Fragment() {
         }
 
     }
+
+
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

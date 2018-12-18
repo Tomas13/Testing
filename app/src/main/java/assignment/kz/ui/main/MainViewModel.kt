@@ -9,6 +9,8 @@ import android.os.Bundle
 import assignment.kz.App
 import assignment.kz.R
 import assignment.kz.data.SupermarketRepository
+import assignment.kz.data.db.RecentDatabase
+import assignment.kz.data.db.entity.DbRecent
 import assignment.kz.data.network.NetworkService
 import assignment.kz.di.SchedulerFactory
 import assignment.kz.ui.BaseViewModel
@@ -121,6 +123,9 @@ class MainViewModel() : BaseViewModel() {
         photos.set(list)
     }
 
+    fun saveToRecents(value: String) {
+        supermarketRepository.insertRecent(value)
+    }
 
 
     /**
