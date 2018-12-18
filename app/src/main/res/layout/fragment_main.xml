@@ -30,15 +30,28 @@
                 android:minHeight="?attr/actionBarSize"
                 app:titleTextColor="@android:color/white">
 
-                <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView1"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:background="@android:color/white"
-                    android:ems="10"
-                    android:singleLine="true" />
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteTextView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/white"
+                        android:ems="10"
+                        android:singleLine="true" />
+
+                    <ImageButton
+                        android:id="@+id/image_cross"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@color/transparentOverlayWhite"
+                        app:srcCompat="@drawable/ic_cross" />
+                </FrameLayout>
 
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>

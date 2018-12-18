@@ -1,5 +1,6 @@
 package assignment.kz.ui.main
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.os.Bundle
@@ -11,14 +12,14 @@ import android.view.inputmethod.EditorInfo
 import android.widget.ArrayAdapter
 import assignment.kz.App
 import assignment.kz.R
-import assignment.kz.data.db.RecentDatabase
-import assignment.kz.data.db.entity.DbRecent
 import assignment.kz.databinding.FragmentMainBinding
 import assignment.kz.di.SchedulerFactory
 import assignment.kz.ui.detail.DetailPhotoActivity
-import com.domain.*
-import io.reactivex.schedulers.Schedulers
+import com.domain.GetPhotos
+import com.domain.PhotoRepository
+import com.domain.QueryRepository
 import kotlinx.android.synthetic.main.fragment_main.*
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -38,7 +39,6 @@ class MainFragment : Fragment() {
     @Inject
     lateinit var schedulerFactory: SchedulerFactory
 
-    val suggestions = ArrayList<String?>()
 
     init {
         App.getApp().getmDiComponent().inject(this)
@@ -50,33 +50,13 @@ class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
+
+
         return binding.root
     }
 
     override fun onStart() {
         super.onStart()
-
-        photoRepository.getRecent().subscribeOn(Schedulers.io())
-                .observeOn(schedulerFactory.mainScheduler)
-                .subscribe { result ->
-                    when (result) {
-//                        is Busy -> isLoading.set(true)
-                        is Success<Photos> -> {
-                            result.value.forEachIndexed { index, photo ->
-                                suggestions.add(photo.title)
-                            }
-                        }
-                        is Failure -> {
-                        }
-                    }
-                }
-
-        suggestions.add("He")
-        suggestions.add("Hes")
-        suggestions.add("Novak")
-
-        val adapter = ArrayAdapter<String>(activity!!, android.R.layout.simple_list_item_1, suggestions)
-        autoCompleteTextView1.setAdapter(adapter)
 
         autoCompleteTextView1.threshold = 0
         autoCompleteTextView1.setOnEditorActionListener { v, actionId, event ->
@@ -93,28 +73,34 @@ class MainFragment : Fragment() {
             handled
         }
 
+        image_cross.setOnClickListener {
+            Timber.d("click")
+            autoCompleteTextView1.clearComposingText()
+            autoCompleteTextView1.text = null
+            viewModel.getSuggestions()
+        }
     }
-
-
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         binding.vm = viewModel
-
         binding.toolbarMain.title = "Недавние"
+
+        viewModel.getSuggestions()
 
         viewModel.loadPhotos(savedInstanceState)
 
+        viewModel.suggestions.observe(this, Observer {
+
+            val adapter = ArrayAdapter<String>(activity!!, android.R.layout.simple_list_item_1,
+                    it)
+            autoCompleteTextView1.setAdapter(adapter)
+        })
+
         viewModel.onPhotoTapped.subscribe {
             startActivity(DetailPhotoActivity.newIntent(activity!!.applicationContext, it))
-
-//            val bundle = Bundle()
-//            bundle.putString(KEY_PHOTO_ID, it)
-//
-//            findNavController().navigate(R.id.detailPhotoFragment, bundle)
         }
     }
 }

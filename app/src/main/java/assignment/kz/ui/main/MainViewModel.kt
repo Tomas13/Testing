@@ -4,13 +4,10 @@ import android.arch.lifecycle.MutableLiveData
 import android.content.res.Resources
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
-import android.databinding.ObservableInt
 import android.os.Bundle
 import assignment.kz.App
 import assignment.kz.R
 import assignment.kz.data.SupermarketRepository
-import assignment.kz.data.db.RecentDatabase
-import assignment.kz.data.db.entity.DbRecent
 import assignment.kz.data.network.NetworkService
 import assignment.kz.di.SchedulerFactory
 import assignment.kz.ui.BaseViewModel
@@ -109,6 +106,15 @@ class MainViewModel() : BaseViewModel() {
     fun onQueryTextSubmit(query: String?): Boolean {
         queryRepository.putQueryText(query)
         return false
+    }
+
+    val suggestions = MutableLiveData<List<String>>()
+
+    fun getSuggestions() {
+
+        supermarketRepository.recents.subscribe { it ->
+            suggestions.postValue(it.map { it.value })
+        }
     }
 
     private fun updatePhotos(result: Success<Photos>) {
