@@ -4,7 +4,7 @@ import retrofit2.Response;
 
 /**
  * Parses ContentResponse from the API and returns their content, or throws
- * MalformedResponseException if response format is invalid.
+ * MalformedResponseException if Response format is invalid.
  */
 public class ResponseParser {
     public static <T> T getContentOrThrow(Response<ContentResponse<T>> response, String tag) {
@@ -12,7 +12,7 @@ public class ResponseParser {
         if (body != null && body.content != null) {
             return body.content;
         } else {
-            throw new MalformedResponseException("Malformed response: " + tag + ", Код: " + response.code());
+            throw new MalformedResponseException("Malformed Response: " + tag + ", Код: " + response.code());
         }
     }
 
@@ -21,7 +21,7 @@ public class ResponseParser {
         if (body != null && body.messages != null) {
             return (T) body.messages;
         } else {
-            throw new MalformedResponseException("Malformed response: " + tag + ", Код: " + response.code());
+            throw new MalformedResponseException("Malformed Response: " + tag + ", Код: " + response.code());
         }
     }
 }

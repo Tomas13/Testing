@@ -13,33 +13,15 @@ import android.widget.ArrayAdapter
 import assignment.kz.App
 import assignment.kz.R
 import assignment.kz.databinding.FragmentMainBinding
-import assignment.kz.di.SchedulerFactory
 import assignment.kz.ui.detail.DetailPhotoActivity
-import com.domain.GetPhotos
-import com.domain.PhotoRepository
-import com.domain.QueryRepository
 import kotlinx.android.synthetic.main.fragment_main.*
 import timber.log.Timber
-import javax.inject.Inject
-
 
 class MainFragment : Fragment() {
-
 
     companion object {
         fun newInstance() = MainFragment()
     }
-
-    @Inject
-    lateinit var getPhotos: GetPhotos
-    @Inject
-    lateinit var queryRepository: QueryRepository
-    @Inject
-    lateinit var photoRepository: PhotoRepository
-    @Inject
-    lateinit var schedulerFactory: SchedulerFactory
-
-
     init {
         App.getApp().getmDiComponent().inject(this)
     }
@@ -55,19 +37,40 @@ class MainFragment : Fragment() {
         return binding.root
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        binding.vm = viewModel
+//        binding.toolbarMain.title = "Недавние"
 
+        viewModel.getSuggestions()
+
+        viewModel.onPhotoTapped.subscribe {
+            startActivity(DetailPhotoActivity.newIntent(activity!!.applicationContext, it))
+        }
+
+        configViews()
+
+        viewModel.suggestions.observe(this, Observer {
+
+            val adapter = ArrayAdapter<String>(activity!!, android.R.layout.simple_list_item_1,
+                    it)
+            autoCompleteTextView1.setAdapter(adapter)
+        })
+
+    }
+
+    private fun configViews() {
         autoCompleteTextView1.threshold = 0
         autoCompleteTextView1.setOnEditorActionListener { v, actionId, event ->
             var handled = false
             if (actionId == EditorInfo.IME_ACTION_NEXT) {
                 viewModel.saveToRecents(v.text.toString())
-                viewModel.onQueryTextSubmit(v.text.toString())
+                viewModel.searchPhotos(v.text.toString())
                 handled = true
             } else
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    viewModel.onQueryTextSubmit(v.text.toString())
+                    viewModel.searchPhotos(v.text.toString())
                     handled = true
                 }
             handled
@@ -78,29 +81,6 @@ class MainFragment : Fragment() {
             autoCompleteTextView1.clearComposingText()
             autoCompleteTextView1.text = null
             viewModel.getSuggestions()
-        }
-    }
-
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        binding.vm = viewModel
-        binding.toolbarMain.title = "Недавние"
-
-        viewModel.getSuggestions()
-
-        viewModel.loadPhotos(savedInstanceState)
-
-        viewModel.suggestions.observe(this, Observer {
-
-            val adapter = ArrayAdapter<String>(activity!!, android.R.layout.simple_list_item_1,
-                    it)
-            autoCompleteTextView1.setAdapter(adapter)
-        })
-
-        viewModel.onPhotoTapped.subscribe {
-            startActivity(DetailPhotoActivity.newIntent(activity!!.applicationContext, it))
         }
     }
 }

@@ -8,7 +8,7 @@ import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "recent",
         indices = [Index(value = ["value"], unique = true)])
-data class DbRecent(
+data class DbRecentEntity(
         @ColumnInfo(name = "value")
         var value: String
 

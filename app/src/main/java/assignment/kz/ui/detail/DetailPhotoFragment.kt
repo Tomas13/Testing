@@ -11,7 +11,6 @@ import assignment.kz.R
 import assignment.kz.databinding.FragmentDetailPhotoBinding
 import kotlinx.android.synthetic.main.fragment_detail_photo.*
 
-
 class DetailPhotoFragment : Fragment() {
 
     companion object {
@@ -23,9 +22,6 @@ class DetailPhotoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
-//        val flowStepNumber = arguments?.getInt("photoId")
-
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail_photo, container, false)
         return binding.root
     }
@@ -35,12 +31,10 @@ class DetailPhotoFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(DetailPhotoViewModel::class.java)
 
         binding.vm = viewModel
-
         viewModel.extractPhotoId(arguments)
 
         image_back.setOnClickListener {
             activity?.finish()
         }
-
     }
 }

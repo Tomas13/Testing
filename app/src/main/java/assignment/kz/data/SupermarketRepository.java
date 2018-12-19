@@ -8,61 +8,39 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import assignment.kz.data.db.RecentDatabase;
-import assignment.kz.data.db.entity.DbRecent;
+import assignment.kz.data.db.entity.DbPhotoEntity;
+import assignment.kz.data.db.entity.DbRecentEntity;
 import assignment.kz.data.network.ApiHelper;
-import assignment.kz.data.network.model.LoginResponse;
-import assignment.kz.data.prefs.PreferencesHelper;
+import assignment.kz.data.network.model.Response;
 import rx.Observable;
 import rx.Subscriber;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-import rx.subscriptions.CompositeSubscription;
 import timber.log.Timber;
 
-/**
- * Created by root on 3/27/18.
- */
-
 @Singleton
-public class SupermarketRepository implements ApiHelper, PreferencesHelper, Repo {
+public class SupermarketRepository implements ApiHelper, Repo {
 
     private final Context mContext;
-    private final PreferencesHelper mPreferencesHelper;
     private final ApiHelper mApiHelper;
     private final RecentDatabase recentDatabase;
 
-    private CompositeSubscription mSub = new CompositeSubscription();
-
     @Inject
     public SupermarketRepository(Context context,
-                                 PreferencesHelper mPreferencesHelper,
                                  ApiHelper mApiHelper,
                                  RecentDatabase recentDatabase) {
         this.mContext = context;
-        this.mPreferencesHelper = mPreferencesHelper;
         this.mApiHelper = mApiHelper;
         this.recentDatabase = recentDatabase;
     }
 
     @Override
-    public Observable<LoginResponse> loginUser(String loginData) {
-        return mApiHelper.loginUser(loginData);
+    public Observable<Response> searchPhotos(String text) {
+        return mApiHelper.searchPhotos(text);
     }
 
     @Override
-    public String getAccessToken() {
-        return mPreferencesHelper.getAccessToken();
-    }
-
-
-    @Override
-    public void putAccessToken(String accessToken) {
-        mPreferencesHelper.putAccessToken(accessToken.trim());
-    }
-
-    @Override
-    public Observable<List<DbRecent>> getRecents() {
+    public Observable<List<DbRecentEntity>> getRecents() {
         return Observable.fromCallable(() -> recentDatabase.getRecentDao().getSuggestions())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
@@ -70,7 +48,7 @@ public class SupermarketRepository implements ApiHelper, PreferencesHelper, Repo
 
     @Override
     public void insertRecent(String value) {
-        Subscription sub = insertRecent(new DbRecent(value))
+        insertRecent(new DbRecentEntity(value))
                 .subscribe(new Subscriber<String>() {
                     @Override
                     public void onCompleted() {
@@ -86,18 +64,53 @@ public class SupermarketRepository implements ApiHelper, PreferencesHelper, Repo
                         Timber.d("Successfully updated");
                     }
                 });
-
-//        mSub.add(sub);
-
-//        recentDatabase.getRecentDao().insert(new DbRecent(value));
     }
 
     @Override
-    public Observable<String> insertRecent(DbRecent dbRecent) {
+    public Observable<String> insertRecent(DbRecentEntity dbRecentEntity) {
         return Observable.fromCallable(() -> {
-            recentDatabase.getRecentDao().insert(dbRecent);
+            recentDatabase.getRecentDao().insert(dbRecentEntity);
             return "";
         })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+
+    }
+
+    @Override
+    public void insertPhotos(List<DbPhotoEntity> list) {
+        insertAll(list)
+                .subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        Timber.d("Successfully updated");
+                    }
+                });
+    }
+
+
+    @Override
+    public Observable<String> insertAll(List<DbPhotoEntity> list) {
+        return Observable.fromCallable(() -> {
+            recentDatabase.photoDao().insertAll(list);
+            return "";
+        })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @Override
+    public Observable<DbPhotoEntity> loadPhotoById(String photoId) {
+        return Observable.fromCallable(() -> recentDatabase.photoDao().loadPhotoById(photoId))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
 

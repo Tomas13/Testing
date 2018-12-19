@@ -8,21 +8,21 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
-import assignment.kz.data.db.entity.DbRecent;
+import assignment.kz.data.db.entity.DbRecentEntity;
 
 @Dao
 public interface RecentDao {
 
     @Insert
-    void insert(DbRecent... recent);
+    void insert(DbRecentEntity... recent);
 
     @Update
-    void update(DbRecent... recent);
+    void update(DbRecentEntity... recent);
 
     @Delete
-    void delete(DbRecent... recent);
+    void delete(DbRecentEntity... recent);
 
     @Query("SELECT * FROM recent")
-    List<DbRecent> getSuggestions();
+    List<DbRecentEntity> getSuggestions();
 
 }

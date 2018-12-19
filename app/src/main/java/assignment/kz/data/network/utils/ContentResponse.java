@@ -1,7 +1,7 @@
 package assignment.kz.data.network.utils;
 
 /**
- * Main response type. All API responses should come in this format, with the payload stored in
+ * Main Response type. All API responses should come in this format, with the payload stored in
  * the `content` field.
  * @param <T> - type of payload.
  */

@@ -10,10 +10,6 @@ import assignment.kz.di.DiModule;
 import assignment.kz.utils.ReleaseTree;
 import timber.log.Timber;
 
-/**
- * Created by root on 3/26/18.
- */
-
 public class App extends Application {
     private DiComponent mDiComponent;
 
@@ -22,7 +18,6 @@ public class App extends Application {
     public static App getApp() {
         return app;
     }
-
 
     @Override
     public void onCreate() {

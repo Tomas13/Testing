@@ -1,7 +1,7 @@
 package assignment.kz.data.network.utils;
 
 /**
- * Thrown when a malformed response body is returned from the server.
+ * Thrown when a malformed Response body is returned from the server.
  */
 public class MalformedResponseException extends RuntimeException {
 
