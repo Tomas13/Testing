@@ -43,11 +43,23 @@
                     android:text="@{vm.title}" />
             </android.support.v7.widget.Toolbar>
 
-            <ImageView
-                android:id="@+id/photoView"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:imageView_loadUrl="@{vm.link}" />
+                android:layout_height="match_parent">
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:indeterminate="true" />
+
+                <ImageView
+                    android:id="@+id/photoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:imageView_loadUrl="@{vm.link}" />
+
+
+            </FrameLayout>
 
         </LinearLayout>
 

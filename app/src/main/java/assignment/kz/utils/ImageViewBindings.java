@@ -47,8 +47,8 @@ public class ImageViewBindings {
                     .load(url);
 
             if (!noPlaceholder) {
-                creator.placeholder(DEFAULT_PLACEHOLDER_DRAWABLE_RES);
-                imageView.setBackgroundResource(DEFAULT_PLACEHOLDER_DRAWABLE_RES);
+//                creator.placeholder(DEFAULT_PLACEHOLDER_DRAWABLE_RES);
+//                imageView.setBackgroundResource(DEFAULT_PLACEHOLDER_DRAWABLE_RES);
             }
 
             if (thumbnailUrl != null) {
